@@ -31,8 +31,6 @@ public class Calculate implements Calculator {
 
     public void resultDifference(Matrix firstMatrix, Matrix secondMatrix) {
         if (compareMatrices(firstMatrix, secondMatrix)) {
-
-
             try {
                 Matrix resultMatrix = new Matrix(firstMatrix.getLineAmount(), firstMatrix.getColumnAmount(), "Difference between matrices");
                 for (int i = 0; i < resultMatrix.getLineAmount(); i++) {
@@ -45,5 +43,6 @@ public class Calculate implements Calculator {
                 e.printStackTrace();
             }
         }
+        else System.err.println("Matrices are not equal");
     }
 }
