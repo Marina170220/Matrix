@@ -32,7 +32,8 @@ public class MatrixCreator {
     }*/
 
     /*public String [] splitStringToSymbols (String enteredString) {
-        String[] line=enteredString.split(separator);
+        if (enteredString.contains(' ')||)
+
         switch (separator) {
             case " ":
             case "-":
@@ -45,13 +46,14 @@ public class MatrixCreator {
             case "*":
 
         }
+        String[] line=enteredString.split(separator);
         return line;
     }*/
 
     public void userFillingByLines(Matrix matrix) {
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < matrix.getLineAmount(); i++) {
-            System.out.println("Enter " + matrix.getColumnAmount() + " elements for filling " + (i + 1) + " line of matrix");
+            System.out.println("Enter " + matrix.getColumnAmount() + " elements for filling " + (i + 1) + " line of matrix.\nUse space to separate elements");
             String matrixLine = scanner.nextLine();
             String[] line = matrixLine.split(" ");
             for (int j = 0; j < matrix.getColumnAmount(); j++) {
