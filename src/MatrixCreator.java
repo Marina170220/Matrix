@@ -14,10 +14,9 @@ public class MatrixCreator {
                 }
             }
         }
-        System.out.println(m);
     }
 
-    public void userFilling(Matrix m) {
+    /*public void userFilling(Matrix m) {
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < m.getLineAmount(); i++) {
             for (int j = 0; j < m.getColumnAmount(); j++) {
@@ -30,5 +29,39 @@ public class MatrixCreator {
             }
         }
         System.out.println(m);
+    }*/
+
+    /*public String [] splitStringToSymbols (String enteredString) {
+        String[] line=enteredString.split(separator);
+        switch (separator) {
+            case " ":
+            case "-":
+            case "_":
+            case "+":
+            case "/":
+            case ";":
+            case ",":
+            case ".":
+            case "*":
+
+        }
+        return line;
+    }*/
+
+    public void userFillingByLines(Matrix matrix) {
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < matrix.getLineAmount(); i++) {
+            System.out.println("Enter " + matrix.getColumnAmount() + " elements for filling " + (i + 1) + " line of matrix");
+            String matrixLine = scanner.nextLine();
+            String[] line = matrixLine.split(" ");
+            for (int j = 0; j < matrix.getColumnAmount(); j++) {
+                int value = Integer.parseInt(line[j]);
+                try {
+                    matrix.setElement(i, j, value);
+                } catch (MatrixException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }

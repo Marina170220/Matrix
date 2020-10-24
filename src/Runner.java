@@ -4,12 +4,16 @@ public class Runner {
         Calculate calculate = new Calculate();
 
         try {
-            Matrix firstMatrix = new Matrix(4, 3, "First Matrix");
-            Matrix secondMatrix = new Matrix(4, 3, "Second Matrix");
+            Matrix firstMatrix = new Matrix(3, 3, "First Matrix");
+            Matrix secondMatrix = new Matrix(3, 3, "Second Matrix");
             matrixCreator.randomFilling(firstMatrix, 0, 100);
-            matrixCreator.userFilling(secondMatrix);
-            calculate.resultSum(firstMatrix, secondMatrix);
-            calculate.resultDifference(firstMatrix, secondMatrix);
+            System.out.println(firstMatrix);
+            matrixCreator.userFillingByLines(secondMatrix);
+            System.out.println(secondMatrix);
+            System.out.println(calculate.sumOfMatrices(firstMatrix, secondMatrix));
+            System.out.println(calculate.differenceBetweenMatrices(firstMatrix, secondMatrix));
+            System.out.println(calculate.multiplyOfMatrices(firstMatrix, secondMatrix));
+            System.out.println(calculate.transposeMatrices(firstMatrix));
 
         } catch (MatrixException e) {
             e.printStackTrace();

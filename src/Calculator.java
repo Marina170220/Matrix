@@ -1,7 +1,13 @@
 public interface Calculator {
 
-    int findSum(int a, int b);
+    Matrix sumOfMatrices(Matrix a, Matrix b) throws MatrixException;
 
-    int findDifference(int a, int b);
+    Matrix differenceBetweenMatrices(Matrix a, Matrix b) throws MatrixException;
+
+    Matrix multiplyOfMatrices (Matrix a, Matrix b) throws MatrixException;
+
+    Matrix transposeMatrices(Matrix a) throws MatrixException;
+
+
 
 }
